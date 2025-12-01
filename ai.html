@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RP Digital Portfolio • AI in Construction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header" data-sparkle-theme="default">
+    <div class="container nav-container">
+      <div class="brand">
+        <a href="index.html">RP Digital Portfolio</a>
+      </div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+         <a href="education.html" class="nav-link">Education</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="ai.html" class="nav-link active">AI in Construction</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header" data-sparkle-theme="default">
+      <div class="container">
+        <h1>AI in Construction</h1>
+        <p>
+          This hub brings together my work at the intersection of artificial intelligence
+          and construction management – from coursework and applied research to weekly
+          reflections on tools, workflows, and real-world impact.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" data-sparkle-theme="default">
+      <div class="container">
+        <div class="cards-grid ai-grid">
+
+          <article class="ai-card">
+            <span class="card-tag">Coursework</span>
+            <h2>Projects</h2>
+            <p>
+              This includes my coursework on AI in construction: LLM evaluation with
+              construction prompts, custom GPT and tool creation, book and article
+              syntheses, and my graduate applied project on AI-based construction
+              delay prediction.
+            </p>
+            <a href="ai-projects.html" class="btn primary-btn">See more →</a>
+          </article>
+
+          <article class="ai-card">
+            <span class="card-tag">Weekly Articles</span>
+            <h2>Weekly Digests</h2>
+            <p>
+              Weekly reflections that capture key insights as I test AI tools on real
+              construction workflows – documentation, planning, coordination, dashboards,
+              and risk analysis – with a focus on what actually helps teams on site.
+            </p>
+            <a href="ai-weekly-digests.html" class="btn primary-btn">See more →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-sparkle-theme="default">
+    <div class="container footer-inner">
+      <p>© 2025 Rushita Patel • RP Digital Portfolio</p>
+      <p>AI, data, and construction – explored weekly.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const body = document.body;
+      const sparkleThemes = {
+        default: {
+          dark: 'rgba(4, 102, 200, 0.95)',
+          mid:  'rgba(4, 102, 200, 0.60)',
+          light:'rgba(4, 102, 200, 0.30)'
+        },
+        hero: {
+          dark: 'rgba(255, 255, 255, 0.96)',
+          mid:  'rgba(229, 235, 255, 0.70)',
+          light:'rgba(229, 235, 255, 0.35)'
+        },
+        alt: {
+          dark: 'rgba(0, 40, 85, 0.95)',
+          mid:  'rgba(0, 40, 85, 0.65)',
+          light:'rgba(0, 40, 85, 0.30)'
+        }
+      };
+
+      function getThemeAtPosition(x, y) {
+        const el = document.elementFromPoint(x, y);
+        if (!el) return sparkleThemes.default;
+        const themed = el.closest('[data-sparkle-theme]');
+        if (!themed) return sparkleThemes.default;
+        const key = themed.getAttribute('data-sparkle-theme');
+        return sparkleThemes[key] || sparkleThemes.default;
+      }
+
+      function createSparkle(x, y, color, sizeFactor, delay) {
+        const s = document.createElement('div');
+        s.className = 'sparkle';
+        const offsetX = (Math.random() - 0.5) * 26;
+        const offsetY = (Math.random() - 0.5) * 26;
+        s.style.left = x + offsetX + 'px';
+        s.style.top  = y + offsetY + 'px';
+        s.style.width  = 18 * sizeFactor + 'px';
+        s.style.height = 18 * sizeFactor + 'px';
+        s.style.background =
+          'radial-gradient(circle, ' + color + ' 0%, rgba(0,0,0,0) 70%)';
+        s.style.animationDelay = delay + 's';
+        body.appendChild(s);
+        s.addEventListener('animationend', function () { s.remove(); });
+      }
+
+      if (window.innerWidth > 768) {
+        document.addEventListener('mousemove', function (e) {
+          const x = e.clientX;
+          const y = e.clientY;
+          const theme = getThemeAtPosition(x, y);
+          createSparkle(x, y, theme.dark, 1.1, 0);
+          createSparkle(x, y, theme.mid,  0.95, 0.03);
+          createSparkle(x, y, theme.light,0.85, 0.06);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mission Critical – Data Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header" data-sparkle-theme="default">
+    <div class="container nav-container">
+      <div class="brand">
+        <a href="index.html">RP Digital Portfolio</a>
+      </div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+         <a href="education.html" class="nav-link">Education</a>
+        <a href="work.html" class="nav-link active">Work</a>
+        <a href="ai.html" class="nav-link">AI in Construction</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header" data-sparkle-theme="default">
+      <div class="container">
+        <h1>Mission Critical – Data Centre</h1>
+        <p>
+          Hyperscale mission-critical data centre in Tennessee, focused on reliability,
+          redundancy and precise mechanical execution.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" data-sparkle-theme="default">
+      <div class="container">
+        <article class="card work-card">
+          <img
+            class="project-image"
+            src="https://assets.bizclikmedia.net/1800/3d612e0a04f88cafc16e7783b79f7676:c39b1e4e6e0df0f752b4075d36a05a5a/gettyimages-1368352775.jpg"
+            alt="Mission critical data centre infrastructure"
+          />
+          <div class="work-card-body">
+            <span class="card-tag">Mission-Critical • Data Centre • Tennessee</span>
+
+            <p>
+              This mission-critical data centre project required tight coordination between
+              design, field teams, and trade partners to deliver mechanical systems that
+              meet strict uptime and performance requirements. I supported the construction
+              management team across coordination, documentation, and site execution.
+            </p>
+
+            <ul class="card-list">
+              <li>
+                Supported mechanical construction for a mission-critical hyperscale data
+                centre, ensuring reliability, redundancy, and compliance with strict
+                performance standards.
+              </li>
+              <li>
+                Created, reviewed, and tracked mechanical hanger submittals, coordinating
+                with engineering teams to ensure accuracy and timely approval.
+              </li>
+              <li>
+                Assisted field teams by updating installation plans, markups, and mechanical
+                layout corrections using Bluebeam and project specifications.
+              </li>
+              <li>
+                Conducted routine site walks to verify hanger placement, material readiness,
+                system routing, and conformance with project drawings.
+              </li>
+              <li>
+                Used OpenSpace to capture 360° site progress, enabling remote monitoring,
+                issue identification, and documentation for leadership.
+              </li>
+              <li>
+                Coordinated with procurement and field supervision to align material deliveries,
+                equipment needs, and daily work sequencing.
+              </li>
+              <li>
+                Tracked weekly labor productivity, crew performance, and task-level progress,
+                helping identify delays and highlight resource needs.
+              </li>
+              <li>
+                Collaborated with project managers on RFI preparation, tracking logs, and
+                document control, ensuring clear communication across teams.
+              </li>
+              <li>
+                Supported quality control efforts, ensuring mechanical installation met safety,
+                alignment, and specification requirements.
+              </li>
+              <li>
+                Contributed to closeout workflows by organizing O&amp;M documentation,
+                equipment data, and mechanical system records for final turnover.
+              </li>
+            </ul>
+
+            <a href="work.html" class="btn primary-btn">← Back to Work</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-sparkle-theme="default">
+    <div class="container footer-inner">
+      <p>© 2025 Rushita Patel • RP Digital Portfolio</p>
+      <p>Built with HTML &amp; CSS • Updated weekly</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const body = document.body;
+      const sparkleThemes = {
+        default: {
+          dark: 'rgba(4, 102, 200, 0.95)',
+          mid:  'rgba(4, 102, 200, 0.60)',
+          light:'rgba(4, 102, 200, 0.30)'
+        },
+        hero: {
+          dark: 'rgba(255, 255, 255, 0.96)',
+          mid:  'rgba(229, 235, 255, 0.70)',
+          light:'rgba(229, 235, 255, 0.35)'
+        },
+        alt: {
+          dark: 'rgba(0, 40, 85, 0.95)',
+          mid:  'rgba(0, 40, 85, 0.65)',
+          light:'rgba(0, 40, 85, 0.30)'
+        }
+      };
+
+      function getThemeAtPosition(x, y) {
+        const el = document.elementFromPoint(x, y);
+        if (!el) return sparkleThemes.default;
+        const themed = el.closest('[data-sparkle-theme]');
+        if (!themed) return sparkleThemes.default;
+        const key = themed.getAttribute('data-sparkle-theme');
+        return sparkleThemes[key] || sparkleThemes.default;
+      }
+
+      function createSparkle(x, y, color, sizeFactor, delay) {
+        const s = document.createElement('div');
+        s.className = 'sparkle';
+        const offsetX = (Math.random() - 0.5) * 26;
+        const offsetY = (Math.random() - 0.5) * 26;
+        s.style.left = x + offsetX + 'px';
+        s.style.top  = y + offsetY + 'px';
+        s.style.width  = 18 * sizeFactor + 'px';
+        s.style.height = 18 * sizeFactor + 'px';
+        s.style.background =
+          'radial-gradient(circle, ' + color + ' 0%, rgba(0,0,0,0) 70%)';
+        s.style.animationDelay = delay + 's';
+        body.appendChild(s);
+        s.addEventListener('animationend', function () { s.remove(); });
+      }
+
+      if (window.innerWidth > 768) {
+        document.addEventListener('mousemove', function (e) {
+          const x = e.clientX;
+          const y = e.clientY;
+          const theme = getThemeAtPosition(x, y);
+          createSparkle(x, y, theme.dark, 1.1, 0);
+          createSparkle(x, y, theme.mid,  0.95, 0.03);
+          createSparkle(x, y, theme.light,0.85, 0.06);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

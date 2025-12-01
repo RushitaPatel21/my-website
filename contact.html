@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RP Digital Portfolio • Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <!-- Main styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ====== extra layout for new contact design (keeps your palette) ====== */
+
+    .contact-hero-inner {
+      max-width: 720px;
+    }
+
+    .contact-hero-inner h1 {
+      margin: 0 0 0.8rem;
+    }
+
+    .contact-hero-inner p {
+      margin: 0;
+      color:  #0f172a;
+      font-size: 0.98rem;
+      max-width: 40rem;
+    }
+
+    .contact-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.7fr);
+      gap: 2.4rem;
+      align-items: flex-start;
+    }
+
+    /* left column – stacked connection buttons */
+
+    .contact-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-left h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.15rem;
+    }
+
+    .contact-left p {
+      margin: 0 0 0.9rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .contact-actions-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .contact-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.9rem;
+      padding: 0.7rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: #f5f7ff;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--blue-darkest);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.16);
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+                  border-color 0.12s ease, background 0.12s ease;
+    }
+
+    .contact-pill:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.24);
+      border-color: var(--blue-accent);
+      background: #ffffff;
+    }
+
+    .contact-pill-main {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    .contact-pill-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(4, 102, 200, 0.1);
+      color: var(--blue-nav);
+      flex-shrink: 0;
+    }
+
+    .contact-pill-detail {
+      font-size: 0.8rem;
+      color: var(--blue-muted-2);
+      opacity: 0;
+      max-width: 180px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transform: translateX(-4px);
+      transition: opacity 0.16s ease, transform 0.16s ease;
+    }
+
+    .contact-pill:hover .contact-pill-detail {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* right column – form */
+
+    .contact-form-panel {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 1.7rem 1.8rem 1.9rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-form-panel h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-form-panel p {
+      margin: 0 0 1.3rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .contact-form-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .contact-form-grid .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .contact-form-panel label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.25rem;
+      color: var(--blue-muted-2);
+    }
+
+    .contact-form-panel input,
+    .contact-form-panel textarea {
+      width: 100%;
+      padding: 0.55rem 0.75rem;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-family: "Lato", system-ui, sans-serif;
+      font-size: 0.9rem;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06) inset;
+    }
+
+    .contact-form-panel textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form-panel input:focus,
+    .contact-form-panel textarea:focus {
+      outline: none;
+      border-color: var(--blue-accent);
+      box-shadow: 0 0 0 1px rgba(4, 102, 200, 0.35);
+    }
+
+    .contact-form-actions {
+      margin-top: 0.8rem;
+      text-align: right;
+    }
+
+    .contact-form-actions .btn {
+      min-width: 180px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-columns {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-form-panel {
+        padding: 1.4rem 1.4rem 1.6rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .contact-form-grid .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-pill-detail {
+        display: none; /* keep buttons compact on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header" data-sparkle-theme="default">
+    <div class="container nav-container">
+      <div class="brand">
+        <a href="index.html">RP Digital Portfolio</a>
+      </div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="education.html" class="nav-link">Education</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="ai.html" class="nav-link">AI in Construction</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTACT HERO -->
+  <section class="contact-hero section" data-sparkle-theme="dark">
+    <div class="container">
+      <div class="contact-hero-inner">
+        <h1>Want to reach out to me?<br>Let’s chat!</h1>
+        <p>
+          Like what you see? Let’s connect. I’d love to hear about your ideas,
+          projects, or opportunities where my skills in construction management,
+          architecture, and AI can make an impact.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTACT CONTENT -->
+  <section class="section contact-main">
+    <div class="container contact-columns">
+
+      <!-- Left: quick contact methods -->
+      <aside class="contact-left">
+        <h2 class="subheading">Connect directly</h2>
+        <p>Use any of these to reach me quickly, or send a message with the form.</p>
+
+        <ul class="contact-actions-list">
+          <!-- LinkedIn -->
+          <li>
+            <a
+              class="contact-pill"
+              href="https://www.linkedin.com/in/rushita-patel-capm%C2%AE-8492941a6/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-pill-main">
+                <span class="contact-pill-icon">
+                  <!-- LinkedIn icon -->
+                  <svg viewBox="0 0 24 24" width="15" height="15">
+                    <path fill="currentColor"
+                      d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 
+                         19V5A2 2 0 0 1 5 3H19M8.34 17V10.67H5.67V17H8.34M7 9.56A1.56 
+                         1.56 0 1 0 7 6.44A1.56 1.56 0 0 0 7 9.56M18.33 17V13.81C18.33 
+                         11.61 17.15 10.5 15.39 10.5C14.17 10.5 13.5 11.17 13.22 11.69H13.18
+                         V10.67H10.67V17H13.34V14.08C13.34 12.96 13.65 12 14.87 12C16.06 12 
+                         16.06 13.04 16.06 14.11V17H18.33Z" />
+                  </svg>
+                </span>
+                <span>LinkedIn</span>
+              </span>
+              <span class="contact-pill-detail">View my LinkedIn profile →</span>
+            </a>
+          </li>
+
+          <!-- Email -->
+          <li>
+            <a class="contact-pill" href="mailto:rpate240@asu.edu">
+              <span class="contact-pill-main">
+                <span class="contact-pill-icon">
+                  <!-- mail icon -->
+                  <svg viewBox="0 0 24 24" width="15" height="15">
+                    <path fill="currentColor"
+                      d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 
+                         2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 2v.01L12 
+                         13L4 6.01V6h16M4 18V8l8 5l8-5v10H4Z" />
+                  </svg>
+                </span>
+                <span>Email</span>
+              </span>
+              <span class="contact-pill-detail">rpate240@asu.edu</span>
+            </a>
+          </li>
+
+          <!-- Mobile -->
+          <li>
+            <a class="contact-pill" href="tel:+16028078002">
+              <span class="contact-pill-main">
+                <span class="contact-pill-icon">
+                  <!-- phone icon -->
+                  <svg viewBox="0 0 24 24" width="15" height="15">
+                    <path fill="currentColor"
+                      d="M20 15.5c-1.25 0-2.46-.2-3.59-.57a1.11 1.11 0 0 0-1.12.26l-1.6 
+                         1.6a15.05 15.05 0 0 1-6.59-6.59l1.6-1.6c.3-.3.4-.75.26-1.14A11.5 
+                         11.5 0 0 1 4.5 4H4a1 1 0 0 0-1 1C3 13.28 9.72 20 18 20a1 1 0 0 0 1-1v-.5
+                         a1 1 0 0 0-1-1Z" />
+                  </svg>
+                </span>
+                <span>Mobile</span>
+              </span>
+              <span class="contact-pill-detail">+1 (602) 807-8002</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Right: form -->
+      <div class="contact-form-panel">
+        <h2 class="subheading">Send a message</h2>
+        <p>Share a bit about your project, question, or opportunity and I’ll get back to you soon.</p>
+
+        <form id="contact-form">
+          <div class="contact-form-grid">
+            <div class="two-col">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+            </div>
+
+            <div>
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" required />
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+          </div>
+
+          <div class="contact-form-actions">
+            <button type="submit" class="btn primary-btn">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>Stay in touch: <a href="mailto:rpate240@asu.edu">rpate240@asu.edu</a></div>
+      <div>© 2025 Rushita Patel • RP Digital Portfolio</div>
+    </div>
+  </footer>
+
+  <!-- CONTACT FORM SCRIPT (uses Formspree) -->
+  <script>
+    // Replace the URL below with your own Formspree endpoint
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
+    document.getElementById("contact-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
+
+      try {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+          alert("Thank you for your message! I will get back to you soon.");
+          form.reset();
+        } else {
+          alert("Sorry, there was a problem sending your message. Please email me directly at rpate240@asu.edu.");
+        }
+      } catch (err) {
+        alert("Something went wrong. Please try again later or email me at rpate240@asu.edu.");
+      }
+    });
+  </script>
+
+  <!-- SPARKLE SCRIPT (same as other pages) -->
+  <script>
+    (function () {
+      const body = document.body;
+
+      const sparkleThemes = {
+        default: {
+          dark: 'rgba(4, 102, 200, 0.95)',
+          mid:  'rgba(4, 102, 200, 0.60)',
+          light:'rgba(4, 102, 200, 0.30)'
+        },
+        hero: {
+          dark: 'rgba(255, 255, 255, 0.96)',
+          mid:  'rgba(229, 235, 255, 0.70)',
+          light:'rgba(229, 235, 255, 0.35)'
+        },
+        alt: {
+          dark: 'rgba(0, 40, 85, 0.95)',
+          mid:  'rgba(0, 40, 85, 0.65)',
+          light:'rgba(0, 40, 85, 0.30)'
+        }
+      };
+
+      function getThemeAtPosition(x, y) {
+        const el = document.elementFromPoint(x, y);
+        if (!el) return sparkleThemes.default;
+        const themed = el.closest('[data-sparkle-theme]');
+        if (!themed) return sparkleThemes.default;
+        const key = themed.getAttribute('data-sparkle-theme');
+        return sparkleThemes[key] || sparkleThemes.default;
+      }
+
+      function createSparkle(x, y, color, sizeFactor, delay) {
+        const s = document.createElement('div');
+        s.className = 'sparkle';
+
+        const offsetX = (Math.random() - 0.5) * 26;
+        const offsetY = (Math.random() - 0.5) * 26;
+
+        s.style.left = x + offsetX + 'px';
+        s.style.top  = y + offsetY + 'px';
+        s.style.width  = 18 * sizeFactor + 'px';
+        s.style.height = 18 * sizeFactor + 'px';
+        s.style.background =
+          'radial-gradient(circle, ' + color + ' 0%, rgba(0,0,0,0) 70%)';
+        s.style.animationDelay = delay + 's';
+
+        body.appendChild(s);
+        s.addEventListener('animationend', function () { s.remove(); });
+      }
+
+      if (window.innerWidth > 768) {
+        document.addEventListener('mousemove', function (e) {
+          const x = e.clientX;
+          const y = e.clientY;
+          const theme = getThemeAtPosition(x, y);
+
+          createSparkle(x, y, theme.dark, 1.1, 0);
+          createSparkle(x, y, theme.mid,  0.95, 0.03);
+          createSparkle(x, y, theme.light,0.85, 0.06);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

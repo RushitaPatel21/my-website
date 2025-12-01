@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sorrento Rossette — 31-Story Twin Towers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header" data-sparkle-theme="default">
+    <div class="container nav-container">
+      <div class="brand">
+        <a href="index.html">RP Digital Portfolio</a>
+      </div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+         <a href="education.html" class="nav-link">Education</a>
+        <a href="work.html" class="nav-link active">Work</a>
+        <a href="ai.html" class="nav-link">AI in Construction</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header" data-sparkle-theme="default">
+      <div class="container">
+        <h1>Sorrento Rossette — 31-Story Twin Towers, Vadodara</h1>
+        <p>
+          Residential high-rise project using Tunnel Form Construction, where I supported
+          planning, coordination, and quality workflows as an intern at UA Design.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" data-sparkle-theme="default">
+      <div class="container">
+        <article class="card work-card">
+          <img
+            class="project-image"
+            src="https://lh3.googleusercontent.com/p/AF1QipNzqGKgylVv3r5Io_DUTHDIvLHXPqe3980QI0qq=s1360-w1360-h1020-rw"
+            alt="Sorrento Rossette twin towers"
+          />
+          <div class="work-card-body">
+            <span class="card-tag">Residential High-Rise • Vadodara • UA Design</span>
+
+            <p>
+              Sorrento Rossette is one of Vadodara’s tallest residential developments,
+              a 31-story twin-tower project delivered using high-speed Tunnel Form
+              Construction. I worked alongside the project team to keep structural cycles
+              efficient while maintaining accuracy and quality on site.
+            </p>
+
+            <ul class="card-list">
+              <li>
+                Contributed to the development of Vadodara’s tallest 31-story twin towers
+                using Tunnel Form Construction, achieving a floor cycle every 80 hours.
+              </li>
+              <li>
+                Assisted with project planning, site coordination, material management, and
+                quality control, working with AutoCAD, Revit, and Microsoft Project.
+              </li>
+              <li>
+                Ensured accurate formwork alignment using Total Station and laser leveling,
+                and monitored concrete curing for early-strength performance.
+              </li>
+              <li>
+                Streamlined material supply through Just-in-Time (JIT) inventory management
+                to maintain continuous workflow and minimize delays.
+              </li>
+              <li>
+                Addressed construction challenges—including alignment issues, logistics
+                bottlenecks, labor shortages, and weather impacts—through structured planning
+                and coordinated execution.
+              </li>
+            </ul>
+
+            <a href="work.html" class="btn primary-btn">← Back to Work</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-sparkle-theme="default">
+    <div class="container footer-inner">
+      <p>© 2025 Rushita Patel • RP Digital Portfolio</p>
+      <p>Built with HTML &amp; CSS • Updated weekly</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const body = document.body;
+      const sparkleThemes = {
+        default: {
+          dark: 'rgba(4, 102, 200, 0.95)',
+          mid:  'rgba(4, 102, 200, 0.60)',
+          light:'rgba(4, 102, 200, 0.30)'
+        },
+        hero: {
+          dark: 'rgba(255, 255, 255, 0.96)',
+          mid:  'rgba(229, 235, 255, 0.70)',
+          light:'rgba(229, 235, 255, 0.35)'
+        },
+        alt: {
+          dark: 'rgba(0, 40, 85, 0.95)',
+          mid:  'rgba(0, 40, 85, 0.65)',
+          light:'rgba(0, 40, 85, 0.30)'
+        }
+      };
+
+      function getThemeAtPosition(x, y) {
+        const el = document.elementFromPoint(x, y);
+        if (!el) return sparkleThemes.default;
+        const themed = el.closest('[data-sparkle-theme]');
+        if (!themed) return sparkleThemes.default;
+        const key = themed.getAttribute('data-sparkle-theme');
+        return sparkleThemes[key] || sparkleThemes.default;
+      }
+
+      function createSparkle(x, y, color, sizeFactor, delay) {
+        const s = document.createElement('div');
+        s.className = 'sparkle';
+        const offsetX = (Math.random() - 0.5) * 26;
+        const offsetY = (Math.random() - 0.5) * 26;
+        s.style.left = x + offsetX + 'px';
+        s.style.top  = y + offsetY + 'px';
+        s.style.width  = 18 * sizeFactor + 'px';
+        s.style.height = 18 * sizeFactor + 'px';
+        s.style.background =
+          'radial-gradient(circle, ' + color + ' 0%, rgba(0,0,0,0) 70%)';
+        s.style.animationDelay = delay + 's';
+        body.appendChild(s);
+        s.addEventListener('animationend', function () { s.remove(); });
+      }
+
+      if (window.innerWidth > 768) {
+        document.addEventListener('mousemove', function (e) {
+          const x = e.clientX;
+          const y = e.clientY;
+          const theme = getThemeAtPosition(x, y);
+          createSparkle(x, y, theme.dark, 1.1, 0);
+          createSparkle(x, y, theme.mid,  0.95, 0.03);
+          createSparkle(x, y, theme.light,0.85, 0.06);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RP Digital Portfolio • Work</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" data-sparkle-theme="default">
+    <div class="container nav-container">
+      <div class="brand">
+        <a href="index.html">RP Digital Portfolio</a>
+      </div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+         <a href="education.html" class="nav-link">Education</a>
+        <a href="work.html" class="nav-link active">Work</a>
+        <a href="ai.html" class="nav-link">AI in Construction</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="page-header" data-sparkle-theme="default">
+      <div class="container">
+        <h1>My Work</h1>
+        <p>
+          A timeline of roles and projects where architectural thinking, construction management,
+          and data-driven workflows come together.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============= WORK TIMELINE (SCROLL + CLICK) ============= -->
+    <section class="section section-alt" data-sparkle-theme="alt">
+      <div class="container work-timeline-layout">
+        <!-- LEFT: TIMELINE -->
+        <aside class="work-timeline-panel">
+          <h2 class="subheading timeline-heading">Work Timeline</h2>
+
+          <div class="timeline-scroll">
+            <div class="timeline-track">
+              <!-- Assistant PM Co-op -->
+              <button class="timeline-item active" data-work="apm">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <div class="timeline-role">Assistant Project Manager Co-op</div>
+                  <div class="timeline-meta">Harris Company • Jun 2025 – Present</div>
+                  <div class="timeline-meta-muted">Phoenix, Arizona</div>
+                </div>
+              </button>
+
+              <!-- Data Center Intern -->
+              <button class="timeline-item" data-work="data-center">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <div class="timeline-role">Construction Project Manager Intern</div>
+                  <div class="timeline-meta">Harris Company • Summer 2024</div>
+                  <div class="timeline-meta-muted">Hyperscale Data Center • Tennessee</div>
+                </div>
+              </button>
+
+              <!-- K+R Architects -->
+              <button class="timeline-item" data-work="kr">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <div class="timeline-role">Architect &amp; Project Designer</div>
+                  <div class="timeline-meta">K + R Architects • Nov 2022 – Mar 2024</div>
+                  <div class="timeline-meta-muted">Vadodara, India</div>
+                </div>
+              </button>
+
+              <!-- UA Design -->
+              <button class="timeline-item" data-work="ua">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <div class="timeline-role">Architectural &amp; Site Supervisor Intern</div>
+                  <div class="timeline-meta">UA Design • Jun 2022 – Dec 2022</div>
+                  <div class="timeline-meta-muted">Ahmedabad, India</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- RIGHT: DETAIL PANEL -->
+        <section class="work-detail-panel">
+          <!-- Assistant PM Co-op -->
+          <article class="work-detail active" id="detail-apm">
+            <header class="work-detail-header">
+              <div class="work-detail-icon">RP</div>
+              <div>
+                <h2>Assistant Project Manager Co-op</h2>
+                <p class="work-detail-meta">
+                  Harris Company • Phoenix, Arizona • Professional
+                </p>
+                <p class="work-detail-meta-muted">
+                  Jun 2025 – Present • Mechanical / mission-critical &amp; commercial projects
+                </p>
+              </div>
+            </header>
+
+            <h3>Key Responsibilities &amp; Achievements</h3>
+            <ul class="work-detail-list">
+              <li>
+                Manage project documentation by reviewing, distributing, and maintaining logs for
+                drawings, RFIs, submittals, and bulletins so project teams work from current information.
+              </li>
+              <li>
+                Support quality control and closeout by updating progress and as-built drawings and
+                preparing O&amp;M manuals, warranty documents, and punch list items.
+              </li>
+              <li>
+                Track procurement, purchase orders, and equipment rentals in WennSoft to support scope,
+                cost, and schedule management.
+              </li>
+              <li>
+                Assist project managers with job costing and labor productivity reviews, helping improve
+                forecasting and identifying risks early.
+              </li>
+              <li>
+                Join regular site walks with field supervision to reinforce safety standards and verify
+                work-in-place against drawings and specifications.
+              </li>
+            </ul>
+          </article>
+
+          <!-- Data Center Intern -->
+          <article class="work-detail" id="detail-data-center">
+            <header class="work-detail-header">
+              <div class="work-detail-icon">DC</div>
+              <div>
+                <h2>Construction Project Manager Intern — Data Center</h2>
+                <p class="work-detail-meta">
+                  Harris Company • Tennessee • Internship
+                </p>
+                <p class="work-detail-meta-muted">
+                  Summer 2024 • Hyperscale mission-critical data center
+                </p>
+              </div>
+            </header>
+
+            <h3>Key Responsibilities &amp; Achievements</h3>
+            <ul class="work-detail-list">
+              <li>
+                Monitored on-site productivity and created planned vs. actual progress reports that
+                highlighted delays, resequencing needs, and resource constraints.
+              </li>
+              <li>
+                Assisted with mechanical and hanger submittals, RFIs, and design clarifications to
+                coordinate between engineering, vendors, and field teams.
+              </li>
+              <li>
+                Maintained document control registers for drawings, RFIs, change orders, and bulletins
+                to keep leadership informed and aligned.
+              </li>
+              <li>
+                Joined regular coordination meetings and site walks, capturing issues related to
+                safety, quality, and schedule and tracking them to closure.
+              </li>
+              <li>
+                Organized O&amp;M documentation, equipment data, and as-recorded drawings to support
+                commissioning and turnover.
+              </li>
+            </ul>
+          </article>
+
+          <!-- K+R Architects -->
+          <article class="work-detail" id="detail-kr">
+            <header class="work-detail-header">
+              <div class="work-detail-icon">KR</div>
+              <div>
+                <h2>Self-Employed Architect &amp; Project Designer</h2>
+                <p class="work-detail-meta">
+                  K + R Architects • Vadodara, India • Residential &amp; interior projects
+                </p>
+                <p class="work-detail-meta-muted">
+                  Nov 2022 – Mar 2024
+                </p>
+              </div>
+            </header>
+
+            <h3>Key Responsibilities &amp; Achievements</h3>
+            <ul class="work-detail-list">
+              <li>
+                Led residential projects from concept design through detailed drawings, aligning
+                client requirements, budgets, and approvals.
+              </li>
+              <li>
+                Developed 3D models and visualizations to communicate design intent and support
+                faster client decision-making.
+              </li>
+              <li>
+                Designed interior layouts, mood boards, and material palettes that balanced function,
+                aesthetics, and ease of construction.
+              </li>
+              <li>
+                Prepared cost estimates and coordinated with contractors on pricing, phasing,
+                and technical queries.
+              </li>
+              <li>
+                Monitored construction progress and responded to site issues to maintain design
+                intent and quality.
+              </li>
+            </ul>
+          </article>
+
+          <!-- UA Design -->
+          <article class="work-detail" id="detail-ua">
+            <header class="work-detail-header">
+              <div class="work-detail-icon">UA</div>
+              <div>
+                <h2>Architectural &amp; Site Supervisor Intern</h2>
+                <p class="work-detail-meta">
+                  UA Design • Ahmedabad, India • High-rise &amp; residential works
+                </p>
+                <p class="work-detail-meta-muted">
+                  Jun 2022 – Dec 2022
+                </p>
+              </div>
+            </header>
+
+            <h3>Key Responsibilities &amp; Achievements</h3>
+            <ul class="work-detail-list">
+              <li>
+                Supported estimating and planning teams with quantity takeoffs and proposal inputs
+                using construction drawings and Bluebeam.
+              </li>
+              <li>
+                Attended coordination meetings and recorded decisions, clarifications, and action items
+                for project managers and site teams.
+              </li>
+              <li>
+                Joined supervision teams on site to monitor safety practices, workmanship, and adherence
+                to drawings and specifications.
+              </li>
+              <li>
+                Worked with Quality Control and Survey teams to verify levels, alignment, and dimensions
+                for structural and architectural elements.
+              </li>
+              <li>
+                Helped manage records such as inspection reports, daily logs, and photo documentation
+                for ongoing projects.
+              </li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </section>
+
+    <!-- ============= FEATURED PROJECTS ============= -->
+    <section class="section" data-sparkle-theme="default">
+      <div class="container">
+        <h2 class="subheading" style="margin-bottom: 1rem;">Featured Projects</h2>
+        <div class="cards-grid">
+
+          <!-- Sorrento -->
+          <article id="sorrento-card" class="card work-card">
+            <img
+              class="project-image"
+              src="https://lh3.googleusercontent.com/p/AF1QipNzqGKgylVv3r5Io_DUTHDIvLHXPqe3980QI0qq=s1360-w1360-h1020-rw"
+              alt="Sorrento Rossette 31-story twin towers in Vadodara"
+            />
+            <div class="work-card-body">
+              <span class="card-tag">Residential High-Rise • Vadodara</span>
+              <h3>Sorrento Rossette — 31-Story Twin Towers, Vadodara</h3>
+              <p>
+                A 31-story twin-tower project delivered with high-speed Tunnel Form Construction.
+                I contributed to planning, coordination, and quality workflows during my internship
+                at UA Design.
+              </p>
+              <a href="project-sorrento-rossette.html" class="btn primary-btn">
+                View Project →
+              </a>
+            </div>
+          </article>
+
+          <!-- Mission Critical -->
+          <article id="mission-card" class="card work-card">
+            <img
+              class="project-image"
+              src="https://assets.bizclikmedia.net/1800/3d612e0a04f88cafc16e7783b79f7676:c39b1e4e6e0df0f752b4075d36a05a5a/gettyimages-1368352775.jpg"
+              alt="Mission critical data centre infrastructure"
+            />
+            <div class="work-card-body">
+              <span class="card-tag">Mission-Critical • Data Centre • Tennessee</span>
+              <h3>Mission Critical – Data Centre</h3>
+              <p>
+                Hyperscale mission-critical data centre in Tennessee where I supported
+                mechanical coordination, documentation, and field execution as part of
+                the construction management team.
+              </p>
+              <a href="project-mission-critical-data-centre.html" class="btn primary-btn">
+                View Project →
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-sparkle-theme="default">
+    <div class="container footer-inner">
+      <p>© 2025 Rushita Patel • RP Digital Portfolio</p>
+      <p>Built with HTML &amp; CSS • Updated weekly</p>
+    </div>
+  </footer>
+
+  <!-- SPARKLE SCRIPT (unchanged) -->
+  <script>
+    (function () {
+      const body = document.body;
+      const sparkleThemes = {
+        default: {
+          dark: 'rgba(4, 102, 200, 0.95)',
+          mid:  'rgba(4, 102, 200, 0.60)',
+          light:'rgba(4, 102, 200, 0.30)'
+        },
+        hero: {
+          dark: 'rgba(255, 255, 255, 0.96)',
+          mid:  'rgba(229, 235, 255, 0.70)',
+          light:'rgba(229, 235, 255, 0.35)'
+        },
+        alt: {
+          dark: 'rgba(0, 40, 85, 0.95)',
+          mid:  'rgba(0, 40, 85, 0.65)',
+          light:'rgba(0, 40, 85, 0.30)'
+        }
+      };
+
+      function getThemeAtPosition(x, y) {
+        const el = document.elementFromPoint(x, y);
+        if (!el) return sparkleThemes.default;
+        const themed = el.closest('[data-sparkle-theme]');
+        if (!themed) return sparkleThemes.default;
+        const key = themed.getAttribute('data-sparkle-theme');
+        return sparkleThemes[key] || sparkleThemes.default;
+      }
+
+      function createSparkle(x, y, color, sizeFactor, delay) {
+        const s = document.createElement('div');
+        s.className = 'sparkle';
+
+        const offsetX = (Math.random() - 0.5) * 26;
+        const offsetY = (Math.random() - 0.5) * 26;
+
+        s.style.left = x + offsetX + 'px';
+        s.style.top  = y + offsetY + 'px';
+        s.style.width  = 18 * sizeFactor + 'px';
+        s.style.height = 18 * sizeFactor + 'px';
+        s.style.background =
+          'radial-gradient(circle, ' + color + ' 0%, rgba(0,0,0,0) 70%)';
+        s.style.animationDelay = delay + 's';
+
+        body.appendChild(s);
+        s.addEventListener('animationend', function () { s.remove(); });
+      }
+
+      if (window.innerWidth > 768) {
+        document.addEventListener('mousemove', function (e) {
+          const x = e.clientX;
+          const y = e.clientY;
+          const theme = getThemeAtPosition(x, y);
+
+          createSparkle(x, y, theme.dark, 1.1, 0);
+          createSparkle(x, y, theme.mid,  0.95, 0.03);
+          createSparkle(x, y, theme.light,0.85, 0.06);
+        });
+      }
+    })();
+
+    // ====== WORK TIMELINE TOGGLE ======
+    (function () {
+      const items = document.querySelectorAll('.timeline-item');
+      const detailBlocks = document.querySelectorAll('.work-detail');
+
+      items.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-work');
+
+          // left side active state
+          items.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // right side active state
+          detailBlocks.forEach(block => {
+            block.classList.toggle('active', block.id === 'detail-' + key);
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
